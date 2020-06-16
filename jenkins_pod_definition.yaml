@@ -1,0 +1,16 @@
+--- 
+apiVersion: v1
+kind: Pod
+metadata: 
+  labels: 
+    author: Raghu
+    dated: 21feb2020
+  name: jenkins-pod
+spec: 
+  containers: 
+    - image: jenkins
+      name: my-jenkins
+      ports: 
+        - containerPort: 8080
+          hostPort: 8080
+...

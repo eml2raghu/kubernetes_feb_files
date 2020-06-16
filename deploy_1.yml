@@ -1,0 +1,25 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+ name: deploy-1
+ labels: 
+  math: arithmetic
+spec:
+ replicas: 5 
+ selector: 
+  matchLabels: 
+   math: arithmetic
+ template: 
+  metadata: 
+   name: pod-1
+   labels: 
+    math: arithmetic
+  spec: 
+   containers: 
+    - name: nginx-container
+      image: nginx:1.7.9
+      ports: 
+       - containerPort: 80
+         hostPort: 8888
+

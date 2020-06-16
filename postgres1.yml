@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+ name: postgres-pod
+ labels: 
+  author: intelliq
+  type: database
+spec: 
+ containers: 
+  - name: mydb
+    image: postgres
+    env: 
+     - name: POSTGRES_PASSWORD
+       value: intelliq
